@@ -1,4 +1,5 @@
 
+import { useEffect, useRef } from "react";
 import Hero from "../Components/Hero/Hero";
 import NewCollections from "../Components/NewCollections/NewCollections";
 import NewsLetter from "../Components/NewsLetter/NewsLetter";
@@ -7,17 +8,21 @@ import Popular from "../Components/Popular/Popular";
 
 
 
-const Shop = ()=>{
+const Shop = () => {
+
+    const scrollRef = useRef(null);
+
+    const executeScroll = () => { scrollRef.current.scrollIntoView() };
 
 
 
     return <div >
-        <Hero/>
+        <Hero scrollToHero={executeScroll} />
         <Popular />
         <Offers />
-        <NewCollections/>
+        <NewCollections refProp={scrollRef} />
         <NewsLetter />
-        
+
     </div>
 }
 

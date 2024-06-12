@@ -1,6 +1,14 @@
 import './Offers.css';
 import exclusive_image from '../Assets/exclusive_image.png'
-const Offers=()=>{
+import bannerMen from "../Assets/banner_mens.png";
+import bannerWomen from "../Assets/banner_women.png";
+import bannerKid from "../Assets/banner_kids.png";
+const Offers = () => {
+
+
+
+    let offerImages = [bannerMen, bannerWomen, bannerKid, exclusive_image];
+
     return <div className="offers">
         <div className='offers-left'>
             <h1>Exclusive</h1>
@@ -9,7 +17,7 @@ const Offers=()=>{
             <button>Check Now</button>
         </div>
         <div className='offers-right'>
-            <img src={exclusive_image}/>
+            <img src={exclusive_image} />
 
         </div>
 
